@@ -1,0 +1,190 @@
+h4, h5, h6,
+h1, h2, h3 {margin: 0;}
+ul, ol {margin: 0;}
+p {margin: 0;}
+html, body{
+  font-family: 'Hind', sans-serif;
+   font-size: 100%;
+   background:#E9EBEE; 
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  transition: 0.5s all;
+  text-decoration: none;
+}
+
+
+.product-block {
+    padding: 0px;
+}
+.home-product-top {
+    margin: 0 auto;
+    width: 100%;
+}
+.home-product-main {
+    position: relative;
+    box-shadow: 0px 0px 1px 1px #ccc;
+    margin-bottom: 3em;
+}
+
+.home-grid:hover .home-product-bottom{
+     background:#EA572D;
+}
+.tablelist:hover {
+    color:#fff;
+    transition: 0.5s all ease;
+}
+.home-grid:hover .home-product-bottom h4 a{
+    color:#fff;
+    transition: 0.5s all ease;
+
+}
+.home-grid:hover .home-product-bottom p {
+    color:#fff;
+    transition: 0.5s all ease;
+}
+.home-grid:hover .home-product-main{
+    transition: 0.5s all ease;
+}
+
+.home-product-bottom h4 {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.copy_right {
+    text-align: center;
+    border-top: 1px solid #EEE;
+    padding: 10px 0;
+    background-color: #CBE6F4;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.card-login {
+    max-width: 25rem;
+}
+
+.card-register {
+    max-width: 40rem;
+}
+
+.card-header {
+    text-align: center;
+    background-color: steelblue;
+}
+
+.card-body {
+    background-color: #F3F3F3;
+}
+.signin-main{
+    text-align:center;
+    width:740px;
+}
+
+.signin-main h1{
+    font-size: 2em;
+    color:#EA572D;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+.signin-main h2 {
+    font-size: 1.5em;
+    color: #847057;
+    margin: 1em 0em;
+    font-family: 'Oswald', sans-serif;
+}
+.thongbao{
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left:17em;
+    float:left;
+}
+.submit {
+    font-size: 1em;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    background:#EA572D;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right:25em;
+    float:left;
+}
+.submit:hover {
+	background:#847057;
+	transition: 0.5s all;
+    margin-left:400px;
+}
+.signin-main input[type="text"] {
+    font-size: 1em;
+    color: #000;
+    width: 48%;
+    padding: 0.4em 0.5em;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin: 0em 2.5em 1em 0em;
+}
+.signin-main input.no-margin {
+    margin: 0px;
+}
+.signin-main input[type="password"] {
+    font-size: 1em;
+    color: #000;
+    width: 48%;
+    padding: 0.4em 0.5em;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin: 1em 2.5em 2em 0em;
+}
+.signin-main input.no-margin {
+    margin: 0px;
+}
+.signin-main input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    padding: 0.6em 1em;
+    background:#EA552B;
+    border: none;
+    outline: none;
+        float: right;
+    margin-top: 2em;
+}
+.content {
+	padding: 20px 0;
+	background: #FFF;
+}
+.company_address p {
+	font-size: 0.8125em;
+	color: #757575;
+	padding: 0.2em 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.company_address p span,.company_address p span a {
+	text-decoration: underline;
+	color: #444;
+	cursor: pointer;
+}
+#menudautrang{background:url(images/menungang_nen.png) repeat;height:40px;padding:1px}
+#menudautrang .contener{padding:1px}
+#menutrai{float:left;height:40px;width:800px}
+.menungang{height:100%;margin:0px auto;padding:0px}
+.menu1{float:left;list-style:none;padding:10px 18px 0px 0px}
+.menungang li a{border-right:1px solid #ccc;color:white;font:bold 15px SFUEurostileCond;padding:9px 20px 10px 0px;text-decoration:none}
+#menutrai a:hover{color:black}
+

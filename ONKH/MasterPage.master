@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="left">
+                left
+            </div>
+            <div id="right">
+                Đăng nhập<br />
+                User:
+                <asp:TextBox ID="txtTenDangNhap" runat="server" Width="132px"></asp:TextBox>
+                <br />
+                Pass : <asp:TextBox ID="txtMatKhau" runat="server" Width="128px"></asp:TextBox>
+                <br />
+                <asp:CheckBox ID="CheckBox1" runat="server" Text="Ghi nhớ tài khoản" />
+                <br />
+                <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" />
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    Đây là phần content
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿body {
+}
+
+#container{
+    width:900px;
+    text-align:center;
+}
+#left{
+    width:250px;
+    float:left;
+    background-color:aqua;
+}
+#right{
+    width:300px;
+    float:right;
+    text-align: center;
+}
+#content{
+    background-color:antiquewhite;
+}

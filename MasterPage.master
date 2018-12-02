@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Trang chủ mua bán online</title>
+    <link rel="stylesheet" type="text/css" href="Data/style.css" />
+    <%--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
+    <link rel="stylesheet" type="text/css" href="Data/css/bootstrap.min.css" />
+    <style type="text/css">
+        .dangki {
+            padding-left: 10px;
+            padding-right: 10px;
+       
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row ">
+                <br />
+                <img style="text-align: center; margin-left: 350px; height: 100px; width: 500px" src="images/logo.jpg" alt=" " />
+                <br />
+                <br />
+                <div class="container">
+                    <div style="text-align: center; border-width: 1px; border-style: solid; border-color: #D9EDF7; font-size: 17px; background-color: #D9EDF7;">
+                        <div id="date"></div>
+
+                        <div id="time"></div>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="navbar " style="background-color: #C4BCB7">
+                <ul class="nav navbar-nav">
+                    <li><a href="Default.aspx">TRANG CHỦ</a></li>
+
+                    <li><a href="#">KHUYẾN MÃI</a></li>
+                    <li><a href="http://www.google.com.vn" title="Trang thông tin phổ biến cho tất cả mọi người" target="_blank">TIN TỨC</a></li>
+                    <li><a href="Lienhe.aspx">LIÊN HỆ</a></li>
+                    <li><a href="Admin.aspx" target="_blank">QUẢN LÝ</a></li>
+                </ul>
+                <div class="nav navbar-nav navbar-right">
+                    <div style="margin-top: 15px; margin-right: 10px; font-size: 16px">
+                        <asp:LinkButton ID="hplGiohang" runat="server" CssClass="dangki" OnClick="hplGiohang_Click">Giỏ hàng</asp:LinkButton>
+                        <asp:HyperLink ID="hplDangky" runat="server" NavigateUrl="Dangki.aspx" CssClass="dangki">Đăng ký</asp:HyperLink>
+                        <asp:HyperLink ID="hplDangnhap" runat="server" NavigateUrl="Dangnhap.aspx" CssClass="dangki">Đăng nhập</asp:HyperLink>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">DANH MỤC SẢN PHẨM</div>
+                        <div class="panel-body">
+
+                            <br />
+                            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="DataSetTableAdapters.DanhMucHangTableAdapter" UpdateMethod="Update">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="Original_MaDM" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:Parameter Name="TenDM" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="TenDM" Type="String" />
+                                    <asp:Parameter Name="Original_MaDM" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:ObjectDataSource>
+                            <asp:DataList ID="DataList1" runat="server" DataKeyField="MaDM" DataSourceID="ObjectDataSource1">
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "DanhSachSanPham.aspx?ID=" + Eval("MaDM") %>' Text='<%# Eval("TenDM") %>'></asp:HyperLink>
+
+                                    <br />
+                                    <br />
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 product-block">
+                    <div class="panel panel-info ">
+
+                        <%--MasterPage--%>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <%--MasterPage--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copy_right">
+                <h5>@ Coppy Right : Kỹ thuật thương mại điện tử.</h5>
+            </div>
+        </div>
+        <script>
+            var d = new Date();
+            var ngay = ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"];
+            var thang = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+            document.getElementById("date").innerHTML = "Hôm nay: " + ngay[d.getDay()] + " ngày " + d.getDate() + " tháng " + thang[d.getMonth()] + " năm " + d.getFullYear();
+        </script>
+        <script>
+            function dongho() {
+                var time = new Date();
+                var gio = time.getHours();
+                var phut = time.getMinutes();
+                var giay = time.getSeconds();
+                if (gio < 10)
+                    gio = "0" + gio;
+                if (phut < 10)
+                    phut = "0" + phut;
+                if (giay < 10)
+                    giay = "0" + giay;
+                document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+                setTimeout("dongho()", 1000);
+            }
+            dongho();
+        </script>
+        <script>
+		var index=1;
+		show(index);
+		function plus(n){
+			show(index +=n);
+		}
+		function show(n){
+			var i;
+			var x=document.getElementsByClassName("slide");
+			if(n > x.length)
+				index=1;
+			if(n<1)
+				index=x.length;
+			for(i=0; i<x.length;i++)
+			{
+				x[i].style.display="none";
+			}
+			x[index-1].style.display="block";
+		} 
+	</script>
+        <script src="Data/jquery-3.3.1.min.js"></script>
+        <script src="Data/js/bootstrap.min.js"></script>
+
+    </form>
+</body>
+</html>
